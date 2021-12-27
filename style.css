@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200&display=swap');
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
+  color: #333;
+  background-image: linear-gradient(
+    to right bottom,
+    #e66de0,
+    #ff58a8,
+    #ff5771,
+    #ee683f,
+    #cb7b0f
+  );
+}
+
+/** Main Container **/
+main {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 70%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+}
+/** Player Section **/
+.player-cards {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  transition: all 0.75s;
+  text-align: center;
+}
+
+.player {
+  width: 100%;
+  height: auto;
+}
+/** Player Name **/
+.name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+/** Player Score **/
+.score {
+  font-size: 5rem;
+  color: #c7365f;
+}
+
+/** Active Player **/
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .current {
+  opacity: 1;
+}
+/** Current Scores **/
+.current {
+  margin: 0 auto;
+  background-color: #c7365f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 70%;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+  padding: 1rem;
+}
+
+.current-score {
+  font-size: 3.5rem;
+  padding: 1rem;
+}
+
+/** Buttons **/
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn--new {
+  top: 10%;
+}
+.btn--roll {
+  top: 60%;
+}
+.btn--hold {
+  top: 75%;
+}
+
+/** Buttons on Hover **/
+.btn--new:hover {
+  padding: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  background-color: #bf2e34;
+  backdrop-filter: none;
+  color: white;
+  box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s;
+}
+.btn--roll:hover,
+.btn--hold:hover {
+  padding: 1.3rem;
+  box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 7px 15px -7px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  height: 8rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.player--winner {
+  background-color: #2f2f2f;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
+}
+
+/** Media Queries **/
+
+@media screen and (max-width: 1025px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  main {
+    width: 80%;
+  }
+  .dice {
+    height: 6rem;
+  }
+  .btn {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 90%;
+  }
+  .dice {
+    margin-top: -20%;
+    height: 5rem;
+  }
+  .score {
+    margin-top: 0;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  .btn--new {
+    top: 25%;
+  }
+  .btn--roll {
+    top: 40%;
+    padding: 0.5rem;
+  }
+  .btn--hold {
+    top: 50%;
+    padding: 0.9rem;
+  }
+
+  .btn--roll:hover,
+  .btn--hold:hover {
+    padding: 0.5rem;
+  }
+
+  .btn--new:hover {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .current-score {
+    font-size: 2rem;
+    margin-top: 0;
+    padding: 1.5rem;
+  }
+}
