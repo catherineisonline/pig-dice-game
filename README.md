@@ -2,6 +2,8 @@
 
 # Pig Dice Game
 
+[Live Preview](https://pig-dice-game-beta.vercel.app/)
+
 This is a web-based implementation of the classic dice game Pig, created using HTML, CSS, and vanilla JavaScript.
 
 ## How to Play
